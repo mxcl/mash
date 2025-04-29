@@ -34,23 +34,6 @@ mash transcribe youtu.be/xiq5euezOEQ -nt 2> transcription.txt
 
 &nbsp;
 
-## `mash stargazer`
-
-Make a stargazer video for any GitHub repo.
-
-### Usage
-
-```sh
-$ mash stargazer
-# ^^ prompts you for repo and other required inputs
-```
-
-### About
-
-Wraps https://github.com/pomber/stargazer for your convenience.
-
-&nbsp;
-
 ## `mash cronic`
 
 Cronic is an old-school shell script that helps control the most annoying

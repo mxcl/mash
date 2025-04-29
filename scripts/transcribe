@@ -5,7 +5,7 @@
 
 set -eo pipefail
 
-if [ -z "$1" ]; then
+if [ -z "$1" -o "$1" = "--help" ]; then
   echo "usage: $0 <youtube-url>" 1>&2
   exit 64
 fi
