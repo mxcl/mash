@@ -1,4 +1,7 @@
 #!/usr/bin/env -S pkgx +whisper.cpp +huggingface-cli=0.19.4 +gum +yt-dlp +ffmpeg bash
+# ---
+# tags: [ai, av, audio, video]
+# ---
 
 set -eo pipefail
 

@@ -1,8 +1,0 @@
-#!/usr/bin/env -S pkgx +duti bash -eo pipefail
-
-duti -s com.microsoft.VSCode    public.plain-text       editor
-duti -s http://com.microsoft.VSCode txt all
-duti -s http://com.microsoft.VSCode md all
-duti -s http://com.microsoft.VSCode yml all
-duti -s http://com.microsoft.VSCode yaml all
-duti -s http://com.microsoft.VSCode json all

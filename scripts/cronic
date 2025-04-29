@@ -6,6 +6,10 @@
 
 # mxcl sourced from https://habilis.net/cronic/
 
+# ---
+# tags: [shell, sh]
+# ---
+
 set -eu
 
 TMP=$(mktemp -d)
