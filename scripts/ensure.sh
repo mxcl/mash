@@ -1,6 +1,18 @@
 #!/usr/bin/env -S pkgx --quiet bash>=4 -eo pipefail
 
 _main() {
+  if [ "$1" = "--help" -o -z "$1" ]; then
+    echo "brief: ensures that a specified program is available, installing it if necessary"
+    echo "usage: mash ensure <program> [<arg>…]"
+    echo 'usage: eval "$(mash ensure +<program> [+<program>…])"'
+    echo 'usage: eval "$(mash ensure --env <program> [<program>…])"'
+    if [ "$1" != "--help" ]; then
+      exit 1
+    else
+      exit 0
+    fi
+  fi
+
   _SOME_PLUS=no
   _EVAL=yes
 
