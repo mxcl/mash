@@ -1,17 +1,31 @@
 #!/usr/bin/env -S pkgx --quiet bash>=4 -eo pipefail
 
 _main() {
-  # check if all args begin with a +
-  _EVAL=yes
   _SOME_PLUS=no
-  for arg in "$@"; do
-    if [ "${arg:0:1}" != "+" ]; then
-      _EVAL=no
-      break
-    else
-      _SOME_PLUS=yes
-    fi
-  done
+  _EVAL=yes
+
+  if [ "$1" = "--env" ]; then
+    shift
+    _SOME_PLUS=yes
+    _NEW_ARGS=()
+    for arg in "$@"; do
+      if [ "${arg:0:1}" != "+" ]; then
+        arg="+$arg"
+      fi
+      _NEW_ARGS+=("$arg")
+    done
+    set -- "${_NEW_ARGS[@]}"
+  else
+    # check if all args begin with a +
+    for arg in "$@"; do
+      if [ "${arg:0:1}" != "+" ]; then
+        _EVAL=no
+        break
+      else
+        _SOME_PLUS=yes
+      fi
+    done
+  fi
 
   if [ $_EVAL = no -a $_SOME_PLUS = yes ]; then
     echo "ensure: unable to mix plus args with unplussed args" >&2
@@ -21,8 +35,7 @@ _main() {
   if [ $_EVAL = yes ]; then
     _KEEP=()
     for arg in "$@"; do
-      _CMD="${arg:1}"
-      if ! _check_arg $_CMD; then
+      if ! _check_arg ${arg:1}; then
         _KEEP+=("$arg")
       fi
     done
