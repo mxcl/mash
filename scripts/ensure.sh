@@ -75,9 +75,13 @@ _check_arg() {
     make|python3|cc|c++|gcc|g++|clang|clang++|strip|git)
       test -f /Library/Developer/CommandLineTools/usr/bin/$1
       ;;
+    *)
+      command -v $1 >/dev/null 2>&1
+      ;;
     esac
+  else
+    command -v $1 >/dev/null 2>&1
   fi
-  command -v $1 >/dev/null 2>&1
 }
 
 _main "$@"

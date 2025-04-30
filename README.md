@@ -5,6 +5,12 @@
 Ensure a command is available. If a system command is found it is used,
 otherwise the command is run via `pkgx`. Optionally can output `env`-style.
 
+> [!NOTE]
+> We are macOS Xcode Command Line Tools aware, so if the CLI tools are
+> installed and you ask for eg. `git` or `python`, we will use the Xcode CLT
+> version, but if they are not we know not to execute `/usr/bin/git` since it
+> isn’t going to work.
+
 ### Usage
 
 ```sh
@@ -48,7 +54,7 @@ mash transcribe youtu.be/xiq5euezOEQ 2>/dev/null
 Redirecting stdout to a file means that file contains only the transcript:
 
 ```sh
-mash transcribe youtu.be/xiq5euezOEQ -nt 2> transcription.txt
+mash transcribe youtu.be/xiq5euezOEQ -nt > transcription.txt
 ```
 
 &nbsp;
