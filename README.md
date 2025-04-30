@@ -1,5 +1,24 @@
 # [mxcl/mash](https://mash.pkgx.sh/u/mxcl/)
 
+## `mash ensure`
+
+Ensure a command is available. If a system command is found it is used,
+otherwise the command is run via `pkgx`. Optionally can output `env`-style.
+
+### Usage
+
+```sh
+$ mash ensure git status
+# runs system-installed git with arg `status` unless there is none, in which
+# case uses pkgx to invoke `git status`.
+
+$ eval "$(mash ensure +git +cargo +npm)"
+# imports the above commands into your shell environment
+
+# same as the above
+$ eval "$(mash ensure --env git cargo npm)"
+```
+
 ## `mash transcribe`
 
 Transcribe YouTube videos fast with local AI.
@@ -46,3 +65,25 @@ $ crontab -l
 
  0 12 * * * /path/to/mash cronic /path/to/your/script.sh
  ```
+
+## `mash upgrade`
+
+Ensures the latest version of all installed `pkgx` packages are installed.
+Older versions are not removed (see `mash prune`).
+
+### Usage
+
+```sh
+$ mash upgrade
+
+$ mash upgrade git
+# ^^ only upgrade git
+```
+
+## `mash magic`
+
+Miss the old `pkgx^1` magic? Here you go.
+
+```
+eval "$(mash magic)"
+```
