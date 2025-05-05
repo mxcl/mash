@@ -1,5 +1,15 @@
 # [mxcl/mash](https://mash.pkgx.sh/u/mxcl/)
 
+## `mash outdated`
+
+List all installed `pkgx` packages that are outdated.
+
+### Usage
+
+```sh
+mash outdated
+```
+
 ## `mash ensure`
 
 Ensure a command is available. If a system command is found it is used,
