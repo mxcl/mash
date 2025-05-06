@@ -1,5 +1,17 @@
 # [mxcl/mash](https://mash.pkgx.sh/u/mxcl/)
 
+## `mash info`
+
+Open the pkgpage for a program.
+
+### Usage
+
+```sh
+mash info <program>
+```
+
+Note, fully qualified package names will not work, eg `mash info git-scm.org`.
+
 ## `mash outdated`
 
 List all installed `pkgx` packages that are outdated.
