@@ -16,7 +16,7 @@ if [ "$1" == '--random' -o "$1" == '-r' ]; then
   set -- "$(pkgx -Q | tr , '\n' | pkgx -q shuf -n1)"
 fi
 
-IFS=$',\n' read -r -a project < <(pkgx -Q "$1")
+IFS=$',\n' read -r -a project < <(pkgx -Q -- "$1")
 
 if [ "${#project[@]}" -eq 0 ] || [[ "${project[@]}" = *" not found" ]]; then
   echo "unknown program: $1" 1>&2
