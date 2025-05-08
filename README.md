@@ -2,12 +2,15 @@
 
 ## `mash info`
 
-Open the pkgpage for a program.
+Open the pkgx.dev listing page for a program.
 
 ### Usage
 
 ```sh
-mash info <program>
+$ mash info <program>
+
+# for funsies, open a random package
+$ mash info --random
 ```
 
 Note, fully qualified package names will not work, eg `mash info git-scm.org`.
