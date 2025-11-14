@@ -115,6 +115,15 @@ $ mash upgrade git
 
 Miss the old `pkgx^1` magic? Here you go.
 
-```
+```sh
 eval "$(mash magic)"
+```
+
+## `mash favicon`
+
+Generate all the faviconsyou need in 202x from a single input image (should be
+1024x1024).
+
+```sh
+mash favicon input.png  # outputs to ./favicons/
 ```
