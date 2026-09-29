@@ -1,7 +1,7 @@
 #!/usr/bin/env -S pkgx --quiet deno~1.39 run --ext=ts --allow-read --unstable --allow-net --allow-ffi --allow-write --allow-env --allow-run
 
-import { hooks, Path, plumbing, semver, SemVer } from "https://deno.land/x/libpkgx@v0.18/mod.ts"
-import usePantry from "https://deno.land/x/libpkgx@v0.18/src/hooks/usePantry.ts";
+import { hooks, Path, plumbing, semver, SemVer } from "https://deno.land/x/libpkgx@v0.22.1/mod.ts"
+import usePantry from "https://deno.land/x/libpkgx@v0.22.1/src/hooks/usePantry.ts";
 const { useConfig, useInventory } = hooks
 const { install, link } = plumbing
 
